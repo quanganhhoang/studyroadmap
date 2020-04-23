@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Container from '@material-ui/core/Container';
 import Box from '@material-ui/core/Box';
@@ -19,18 +19,20 @@ const styles = (theme) => ({
   },
 });
 
-function AppForm(props) {
-  const { children, classes } = props;
+class AppForm extends Component {
+  render() {
+    const { children, classes } = this.props;
 
-  return (
-    <div className={classes.root}>
-      <Container maxWidth="sm">
-        <Box mt={7} mb={12}>
-          <Paper className={classes.paper}>{children}</Paper>
-        </Box>
-      </Container>
-    </div>
-  );
+    return (
+      <div className={classes.root}>
+        <Container maxWidth="sm">
+          <Box mt={7} mb={12}>
+            <Paper className={classes.paper}>{children}</Paper>
+          </Box>
+        </Container>
+      </div>
+    );
+  }
 }
 
 AppForm.propTypes = {

@@ -76,7 +76,7 @@ function ProductHowItWorks(props) {
                   className={classes.image}
                 />
                 <Typography variant="h5" align="center">
-                  Appointment every Wednesday 9am.
+                  Search for what you want to study
                 </Typography>
               </div>
             </Grid>
@@ -89,7 +89,7 @@ function ProductHowItWorks(props) {
                   className={classes.image}
                 />
                 <Typography variant="h5" align="center">
-                  First come, first served. Our offers are in limited quantities, so be quick.
+                  Find a roadmap that fits you the most and follow it!
                 </Typography>
               </div>
             </Grid>
@@ -102,8 +102,8 @@ function ProductHowItWorks(props) {
                   className={classes.image}
                 />
                 <Typography variant="h5" align="center">
-                  {'New offers every week. New experiences, new surprises. '}
-                  {'Your Sundays will no longer be alike.'}
+                  {'Rate the roadmaps you follow to help others find their best. '}
+                  {'And maybe share with us your journey when you are ready!'}
                 </Typography>
               </div>
             </Grid>

@@ -67,8 +67,8 @@ const LANGUAGES = [
     name: 'English',
   },
   {
-    code: 'fr-FR',
-    name: 'Français',
+    code: 'vn-VN',
+    name: 'Tiếng Việt',
   },
 ];
 
