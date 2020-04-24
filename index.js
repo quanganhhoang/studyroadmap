@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 const cookieSession = require('cookie-session') // cookie-session vs. express-session
 const passport = require('passport')
 const keys= require('./config/keys')
-const registerRoutes = require('./routes/register'); // function exported from authRoutes.js
+
 
 const app = express();
 
@@ -20,12 +20,17 @@ app.use(passport.session());
 
 // ====== token setup ======
 
-require('./models/User') // this should be exported be passport is
+require('./models/Tag.js');
+require('./models/Milestone.js');
+require('./models/User.js');
+require('./models/Roadmap.js');
 require('./services/passport');
 
-mongoose.connect(keys.mongoURI, { useNewUrlParser: true })
+mongoose.connect(keys.mongoURI, { useNewUrlParser: true,  useFindAndModify: false })
 
+const registerRoutes = require('./routes/register'); // function exported from authRoutes.js
 registerRoutes(app);
+
 const PORT = process.env.PORT || 5000; // to be read by heroku or 5000 by default in dev environment
 app.listen(PORT);
 console.log("server running")
