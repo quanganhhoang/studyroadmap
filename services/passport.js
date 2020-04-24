@@ -6,7 +6,8 @@ const keys = require('../config/keys')
 const User = mongoose.model('users')
 
 passport.serializeUser((user, done) => {
-  done(null, user.id);
+  console.log(user);
+  done(null, user._id);
 })
 
 passport.deserializeUser((id, done) => {
@@ -22,7 +23,7 @@ passport.use(
     clientID: keys.googleClientID,
     clientSecret: keys.googleClientSecret,
     callbackURL: '/auth/google/callback',
-    proxy: true,
+    proxy: false,
   },
   async (accessToken, refreshToken, profile, done) => {
     // async call

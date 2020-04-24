@@ -9,8 +9,7 @@ module.exports = (app) => {
   );
   
   app.get(
-    '/auth/google/callback', 
-    passport.authenticate('google', {scope: 'https://www.googleapis.com/auth/plus.login'})
+    '/auth/google/callback', passport.authenticate('google', {scope: 'https://www.googleapis.com/auth/plus.login', successRedirect: '/', failureRedirect: '/'})
   );
 
   app.get('/api/current_user', (req, res) => {
