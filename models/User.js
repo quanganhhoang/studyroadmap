@@ -1,8 +1,12 @@
-const mongoose = require('mongoose')
-const { Schema } = mongoose; // destructuring, equiv to const Schema = mongoose.Schema
+import { Schema } from 'mongoose';
+import mongoose from "mongoose";
+
 
 const userSchema = new Schema({
-  googleId: String
+  googleId: String,
+  full_name: String,
+  
+
 })
 
 mongoose.model('users', userSchema);

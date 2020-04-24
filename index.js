@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 const cookieSession = require('cookie-session') // cookie-session vs. express-session
 const passport = require('passport')
 const keys= require('./config/keys')
-const authRoutes = require('./routes/authRoutes'); // function exported from authRoutes.js
+const registerRoutes = require('./routes/register'); // function exported from authRoutes.js
 
 const app = express();
 
@@ -25,7 +25,7 @@ require('./services/passport');
 
 mongoose.connect(keys.mongoURI, { useNewUrlParser: true })
 
-authRoutes(app);
+registerRoutes(app);
 const PORT = process.env.PORT || 5000; // to be read by heroku or 5000 by default in dev environment
 app.listen(PORT);
 console.log("server running")

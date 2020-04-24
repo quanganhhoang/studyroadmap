@@ -8,10 +8,12 @@
     "npm": "6.14.4"
   },
   "scripts": {
-    "start": "node index.js",
-    "server": "nodemon index.js",
+    "start": "node dist/index.js",
+    "clean": "rimraf dist",
+    "build-babel": "npm run clean && babel ./ --ignore client/ --ignore node_modules/ --out-dir ./dist", 
+    "server": "nodemon dist/index.js",
     "client": "npm run start --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "dev": "concurrently \"npm run build-babel && npm run server\" \"npm run client\""
   },
   "author": "QA Hoang",
   "license": "ISC",
@@ -22,6 +24,15 @@
     "mongoose": "^5.9.9",
     "nodemon": "^2.0.3",
     "passport": "^0.4.1",
-    "passport-google-oauth20": "^2.0.0"
+    "passport-google-oauth20": "^2.0.0",
+    "rimraf": "^3.0.2",
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.8.6",
+    "@babel/node": "^7.8.4",
+    "@babel/plugin-proposal-object-rest-spread": "^7.8.3",
+    "@babel/plugin-transform-runtime": "^7.8.3",
+    "@babel/polyfill": "^7.8.3",
+    "@babel/preset-env": "^7.8.6",
+    "@babel/runtime": "^7.8.4"
   }
 }
