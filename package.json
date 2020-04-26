@@ -1,0 +1,39 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "server code for studyroadmap-app",
+  "main": "index.js",
+  "engines": {
+    "node": "13.13.0",
+    "npm": "6.14.4"
+  },
+  "scripts": {
+    "start": "node dist/index.js",
+    "clean": "rimraf dist",
+    "build-babel": "npm run clean && babel ./ --ignore client/ --ignore node_modules/ --out-dir ./dist",
+    "server": "nodemon dist/index.js",
+    "client": "npm run start --prefix client",
+    "dev": "concurrently \"npm run build-babel && npm run server\" \"npm run client\""
+  },
+  "author": "QA Hoang",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.8.6",
+    "@babel/node": "^7.8.4",
+    "@babel/plugin-proposal-object-rest-spread": "^7.8.3",
+    "@babel/plugin-transform-runtime": "^7.8.3",
+    "@babel/polyfill": "^7.8.3",
+    "@babel/preset-env": "^7.8.6",
+    "@babel/runtime": "^7.8.4",
+    "concurrently": "^5.1.0",
+    "cookie-session": "^1.4.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.9.9",
+    "nodemon": "^2.0.3",
+    "passport": "^0.4.1",
+    "passport-google-oauth20": "^2.0.0",
+    "react-markdown": "^4.3.1",
+    "rimraf": "^3.0.2"
+  }
+}
